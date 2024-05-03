@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Components\FilmsViewComponents\FilmListComponent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\FilmsViewComponents\FilmListNotForUse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\FilmsViewComponents\FilterPanelComponent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\FilmotekaView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Components\FilmsViewComponents\FilmListComponent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\FilmsViewComponents\FilmListNotForUse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\FilmsViewComponents\FilterPanelComponent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\FilmotekaView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\CheckBoxStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ExpenderStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\RatingControlStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

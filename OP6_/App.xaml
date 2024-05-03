@@ -1,0 +1,25 @@
+﻿<Application x:Class="OP6_.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OP6_"
+             xmlns:view="clr-namespace:OP6_.MVVM.View"
+             xmlns:vms="clr-namespace:OP6_.MVVM.ViewModel">
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vms:MainWindowViewModel}">
+                <view:MainWindow />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:FilmotekaViewModel}">
+                <view:FilmotekaView />
+            </DataTemplate>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\Styles\ButtonStyles.xaml"/>
+                <ResourceDictionary Source="\Styles\RatingControlStyles.xaml"/>
+                <ResourceDictionary Source="\Styles\ExpenderStyles.xaml"/>
+                <ResourceDictionary Source="\Styles\CheckBoxStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

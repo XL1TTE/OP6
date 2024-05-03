@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type CheckBox}"
+           x:Key="CheckBoxStyle1">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Border CornerRadius="2"                                          
+                                            x:Name="CheckBox"
+                                            Height="{TemplateBinding Height}"
+                                            Width="{TemplateBinding Height}"
+                                            Background="WhiteSmoke"
+                                            BorderBrush="#303030"
+                                            BorderThickness="1">
+
+                                        <Polyline Points="0,7 6,12 13,2" 
+                                                  x:Name="Checker"
+                                                StrokeThickness="3"
+                                                Stroke="WhiteSmoke"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Visibility="{TemplateBinding IsChecked}"/>
+                                    </Border>
+                                </Grid>
+                                <Grid Margin="5 0 0 0" Grid.Column="1">
+                                    <TextBlock Text="{TemplateBinding Content}"
+                                               FontSize="{TemplateBinding FontSize}"
+                                               Foreground="{TemplateBinding Foreground}"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Center" TextAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightYellow"/>
+                                <Setter  Property="Foreground" Value="Orange"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckBox" Property="Background" Value="#ff8308"/>
+                                <Setter TargetName="CheckBox" Property="Background" Value="#ff8308"/>
+                            </Trigger>
+                            <Trigger  Property="IsChecked" Value="True">
+                                <Setter TargetName="Checker" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="Checker" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>
