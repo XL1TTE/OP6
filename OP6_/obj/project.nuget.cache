@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "XOM/jU58fP5UFvhgDmw7XMu+2jp8YziRkYzRrHfxRFMxge1Q34Oi7HBLnfp+LpQwrEyJT8w6/+3TmSg15F62Wg==",
+  "dgSpecHash": "7BviUsJdMefAJ7+CGFnbadaoXIK0NQZRLcNzA4Xn/ARNf+FBm6rjqxcqbdYaMXQ26qTfArSJd1QNS8kgNBxBcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Artyom\\source\\repos\\OP6_\\OP6_\\OP6_.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Artyom\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
-    "C:\\Users\\Artyom\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+    "C:\\Users\\Artyom\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Artyom\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512"
   ],
   "logs": []
 }

@@ -44,6 +44,12 @@
                                   IsChecked="{Binding FilmFilterParameters.Comedy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                   FontSize="18"
                                   Margin="5"/>
+                                <CheckBox Content="Боевик" 
+                                  Style="{StaticResource CheckBoxStyle1}"
+                                  Height="18"
+                                  IsChecked="{Binding FilmFilterParameters.Action, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  FontSize="18"
+                                  Margin="5"/>
                             </StackPanel>
                         </Expander.Content>
                     </Expander>
@@ -58,6 +64,24 @@
                                            Margin="5 0 0 0"/>
                                 <TextBox Width="100"
                                          Text="{Binding FilmFilterParameters.EndDate, Mode=TwoWay}"/>
+                            </StackPanel>
+                        </Expander.Content>
+                    </Expander>
+                    <Expander Header="По рейтингу" Style="{StaticResource ExpanderStyle1}" FontSize="14">
+                        <Expander.Content>
+                            <StackPanel >
+                                <RadioButton Content="По возрастанию" 
+                                  Style="{StaticResource RadioButtonStyle1}"                        
+                                  Height="18"
+                                  IsChecked="{Binding FilmFilterParameters.IsIncreasing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  FontSize="18"
+                                  Margin="5"/>
+                                <RadioButton Content="По убыванию" 
+                                  Style="{StaticResource RadioButtonStyle1}"
+                                  IsChecked="{Binding FilmFilterParameters.IsDescending, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  Height="18"
+                                  FontSize="18"
+                                  Margin="5"/>
                             </StackPanel>
                         </Expander.Content>
                     </Expander>

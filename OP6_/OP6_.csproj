@@ -9,15 +9,18 @@
 
   <ItemGroup>
     <None Remove="Icons\ButtonIcons\filmicon.png" />
+    <None Remove="Icons\ButtonIcons\resetIcon.png" />
     <None Remove="Images\Films\FilmPreviewImage.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Icons\ButtonIcons\filmicon.png" />
+    <Resource Include="Icons\ButtonIcons\resetIcon.png" />
     <Resource Include="Images\Films\FilmPreviewImage.png" />
   </ItemGroup>
 

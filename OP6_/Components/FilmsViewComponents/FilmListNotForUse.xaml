@@ -40,8 +40,9 @@
                                 <Run Text="(2005 год)"/>
                             </TextBlock>
                             <TextBlock Text="Фильм про ученого создавшего первую атомную бомбу"                                    
-                                       FontSize="18"
+  FontSize="18"
                                        TextWrapping="Wrap"/>
+
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Column="2">

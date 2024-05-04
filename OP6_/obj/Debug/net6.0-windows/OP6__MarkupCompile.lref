@@ -1,8 +1,11 @@
 ﻿
 FC:\Users\Artyom\source\repos\OP6_\OP6_\App.xaml;;
+FC:\Users\Artyom\source\repos\OP6_\OP6_\Components\FilmsViewComponents\DirectorsListComponent.xaml;;
+FC:\Users\Artyom\source\repos\OP6_\OP6_\Components\FilmsViewComponents\FilmAddPanelComponent.xaml;;
 FC:\Users\Artyom\source\repos\OP6_\OP6_\Components\FilmsViewComponents\FilmListComponent.xaml;;
 FC:\Users\Artyom\source\repos\OP6_\OP6_\Components\FilmsViewComponents\FilmListNotForUse.xaml;;
 FC:\Users\Artyom\source\repos\OP6_\OP6_\Components\FilmsViewComponents\FilterPanelComponent.xaml;;
+FC:\Users\Artyom\source\repos\OP6_\OP6_\MVVM\View\DirectorsView.xaml;;
 FC:\Users\Artyom\source\repos\OP6_\OP6_\MVVM\View\FilmotekaView.xaml;;
 FC:\Users\Artyom\source\repos\OP6_\OP6_\Styles\RatingControlStyles.xaml;;
 FC:\Users\Artyom\source\repos\OP6_\OP6_\Themes\Generic.xaml;;

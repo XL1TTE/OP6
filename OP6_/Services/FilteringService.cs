@@ -23,9 +23,9 @@ namespace OP6_.Services
         }
         public ObservableCollection<Film> Filter()
         {
-            var temp = new ObservableCollection<Film>(
+            var temp = new ObservableCollection<Film>(FilterByRating(
                 FilterByReleaseDate(FilterByGenre(_filmLocaldb.FilmsList))
-                );
+                ));
             return temp;
         }
         public ObservableCollection<Film> ResetFilters()
@@ -54,6 +54,26 @@ namespace OP6_.Services
             var temp = FilmsListToShow.Where(f => (f.PremierDate <= FilterDateParam.Item2) && (f.PremierDate >= FilterDateParam.Item1))
                 .OrderByDescending(f => Convert.ToInt32(f.PremierDate))
                 .ToList();
+            return temp;
+        }
+
+        public List<Film> FilterByRating(List<Film> FilmsListToShow)
+        {
+           var temp = FilmsListToShow.OrderBy(f => _filterParameters.IsDescending ? f.Rating * -1 : f.Rating).ToList();
+           return temp;
+        }
+
+        public List<dynamic> GetFilteredDirectors()
+        {
+            var temp = _filmLocaldb.FilmsList.GroupBy(f => f.Producer)
+                .Select(s => new 
+                {
+                    Director = s.Key,
+                    AvgRating = Math.Round(s.Average(f => f.Rating), 1),
+                    FilmCount = s.Count(),
+                    FirsFilm = s.Min(f => f.PremierDate),
+                    LastFilm = s.Max(f => f.PremierDate)
+                }).Cast<dynamic>().ToList();
             return temp;
         }
     }

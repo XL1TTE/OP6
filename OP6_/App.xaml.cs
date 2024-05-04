@@ -33,7 +33,8 @@ namespace OP6_
                 DataContext = provider.GetRequiredService<MainWindowViewModel>()
             });
             services.AddSingleton<MainWindowViewModel>();
-            services.AddSingleton<FilmotekaViewModel>();
+            services.AddTransient<FilmotekaViewModel>();
+            services.AddTransient<DirectorsViewModel>();
 
             services.AddSingleton<INavigationService, NavigationService>();
 

@@ -37,3 +37,12 @@ C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Components\Films
 C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Components\FilmsViewComponents\FilterPanelComponent.baml
 C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Styles\ExpenderStyles.baml
 C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Styles\CheckBoxStyles.baml
+C:\Users\Artyom\source\repos\OP6_\OP6_\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Components\FilmsViewComponents\DirectorsListComponent.g.cs
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\MVVM\View\DirectorsView.g.cs
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Components\FilmsViewComponents\DirectorsListComponent.baml
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\MVVM\View\DirectorsView.baml
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Components\FilmsViewComponents\FilmAddPanelComponent.g.cs
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Components\FilmsViewComponents\FilmAddPanelComponent.baml
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Styles\ComboxBoxStyles.baml
+C:\Users\Artyom\source\repos\OP6_\OP6_\obj\Debug\net6.0-windows\Styles\TextBoxStyles.baml
