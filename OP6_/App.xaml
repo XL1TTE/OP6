@@ -13,12 +13,17 @@
             <DataTemplate DataType="{x:Type vms:FilmotekaViewModel}">
                 <view:FilmotekaView />
             </DataTemplate>
-            
+            <DataTemplate DataType="{x:Type vms:DirectorsViewModel}">
+                <view:DirectorsView />
+            </DataTemplate>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="\Styles\ButtonStyles.xaml"/>
                 <ResourceDictionary Source="\Styles\RatingControlStyles.xaml"/>
                 <ResourceDictionary Source="\Styles\ExpenderStyles.xaml"/>
                 <ResourceDictionary Source="\Styles\CheckBoxStyles.xaml"/>
+                <ResourceDictionary Source="\Styles\ComboxBoxStyles.xaml"/>
+                <ResourceDictionary Source="\Styles\TextBoxStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

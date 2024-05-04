@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Artyom\source\repos\OP6_\OP6_\App.xaml
-10282610118
+15-209445949
 
-21311871876
-196414054509
-Components\FilmsViewComponents\FilmListComponent.xaml;Components\FilmsViewComponents\FilmListNotForUse.xaml;Components\FilmsViewComponents\FilterPanelComponent.xaml;MVVM\View\FilmotekaView.xaml;MVVM\View\MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\CheckBoxStyles.xaml;Styles\ExpenderStyles.xaml;Styles\RatingControlStyles.xaml;Themes\Generic.xaml;
+26-588149935
+197-48739708
+Components\FilmsViewComponents\DirectorsListComponent.xaml;Components\FilmsViewComponents\FilmAddPanelComponent.xaml;Components\FilmsViewComponents\FilmListComponent.xaml;Components\FilmsViewComponents\FilmListNotForUse.xaml;Components\FilmsViewComponents\FilterPanelComponent.xaml;MVVM\View\DirectorsView.xaml;MVVM\View\FilmotekaView.xaml;MVVM\View\MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\CheckBoxStyles.xaml;Styles\ComboxBoxStyles.xaml;Styles\ExpenderStyles.xaml;Styles\RatingControlStyles.xaml;Styles\TextBoxStyles.xaml;Themes\Generic.xaml;
 
-True
+False
 

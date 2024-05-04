@@ -5,20 +5,42 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:OP6_.Components.FilmsViewComponents"
              xmlns:cc="clr-namespace:OP6_.CustomUserControls"
+             xmlns:ec="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="this">
     <UserControl.Resources>
-        <SolidColorBrush x:Key="FilmItemBackgroundColor" Color="LightYellow"/>
+        <SolidColorBrush x:Key="FilmItemBackgroundColor" Color="WhiteSmoke"/>
+        <SolidColorBrush x:Key="FilmItemBorderColor" Color="LightGray"/>
         <BitmapImage x:Key="FilmItemPreviewImage" UriSource="..\..\Images\Films\FilmPreviewImage.png"/>
     </UserControl.Resources>
     <Grid Background="WhiteSmoke">
-        <ItemsControl ItemsSource="{Binding FilmsToShow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Border Background="LightGray">
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="40" FontSize="20" Command="{Binding ResetFiltersCommand}"
+                            Style="{StaticResource TooltipButtonStyle}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Grid.Row="1" Margin="0 5 0 0">
+            <ItemsControl ItemsSource="{Binding FilmsToShow}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid>
-                            <Border Background="{StaticResource FilmItemBackgroundColor}">
-                                <Grid>
+                        <Border BorderThickness="0 0 0 2"
+                            BorderBrush="{StaticResource FilmItemBorderColor}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                
+                                <!--Filmtemplate-->
+                                <Grid Grid.Row="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="0.3*" MaxWidth="280"/>
                                         <ColumnDefinition Width="*"/>
@@ -28,11 +50,11 @@
                                     <Grid Grid.Column="0">
                                         <Border Margin="25">
                                             <Image Source="{StaticResource FilmItemPreviewImage}"
-                                                HorizontalAlignment="Left">
+                                            HorizontalAlignment="Left">
                                                 <Image.Effect>
                                                     <DropShadowEffect BlurRadius="10"
-                                                                    ShadowDepth="5"
-                                                                    Opacity="0.3"/>
+                                                                ShadowDepth="5"
+                                                                Opacity="0.3"/>
                                                 </Image.Effect>
                                             </Image>
                                         </Border>
@@ -40,29 +62,76 @@
                                     <Grid Grid.Column="1">
                                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25 0 0 0">
                                             <TextBlock FontWeight="Bold" FontSize="28">
-                                                    <Run Text="{Binding Title}"/>
-                                                    <Run Text="{Binding PremierDate}"/>
-                                                    <Run Text="{Binding Genre}" FontSize="8"/>
+                                                <Run Text="{Binding Title}"/>
+                                                <Run Text="{Binding PremierDate}"/>
                                             </TextBlock>
                                             <TextBlock Text="{Binding Description}"                                    
-                                                       FontSize="18"
-                                                       TextWrapping="Wrap"/>
+                                                    FontSize="18"
+                                                    TextWrapping="Wrap"/>
+                                            <TextBlock FontSize="12"
+                                                    FontWeight="Light"
+                                                    Foreground="Gray">
+                                            <Run Text="{Binding StringFormat=Жанр: {0}, Path=Genre}"/>
+                                            <Run Text="{Binding StringFormat=Режиссер: {0}, Path=Producer}"/>
+                                            </TextBlock>
                                         </StackPanel>
                                     </Grid>
                                     <Grid Grid.Column="2">
+
                                         <cc:RatingControl Style="{StaticResource CircularRatingStyle}"
-                                                          Height="60"
-                                                          Width="60"
-                                                          Margin="0 0 15 0"
-                                                          FontSize="24"
-                                                          Rating="{Binding Rating}"/>
+                                                        Height="60"
+                                                        Width="60"
+                                                      Grid.Row="1"
+                                                        Margin="0 0 15 0"
+                                                        FontSize="24"
+                                                        Rating="{Binding Rating}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
                                     </Grid>
                                 </Grid>
-                            </Border>
-                        </Grid>
-                    </Grid>
-                </DataTemplate>
+                                <Grid Grid.Row="1">
+                                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                            Text="Удалить" Foreground="DarkGray"
+                                               Margin="0 0 5 0">
+                                        <ec:Interaction.Triggers>
+                                            <ec:EventTrigger EventName="PreviewMouseDown">
+                                                <ec:InvokeCommandAction PassEventArgsToCommand="True"
+                                                            Command="{Binding ElementName=this, Path=DataContext.DeleteMoveCommand}"/>
+                                            </ec:EventTrigger>
+                                        </ec:Interaction.Triggers>
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="TextDecorations">
+                                                            <Setter.Value>
+                                                                <TextDecorationCollection>
+                                                                    <TextDecoration Location="Underline"/>
+                                                                </TextDecorationCollection>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Grid>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource FilmItemBorderColor}"/>
+                                            <Setter Property="Margin" Value="2 0 0 0"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                    <Setter Property="Background" Value="{StaticResource FilmItemBackgroundColor}"/>
+                                </Style>
+                            </Border.Style>
+                        </Border>
+                    </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        </ItemsControl
+                          >
+        </ScrollViewer>
     </Grid>
 </UserControl>

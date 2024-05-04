@@ -30,9 +30,13 @@ namespace OP6_.MVVM.Model
             Horror = false;
             Dram = false;
             Comedy = false;
+            Action = false;
 
             StartDate = 0;
             EndDate = DateTime.Now.Year;
+
+            IsDescending = false;
+            IsIncreasing = false;
         }
 
         private bool _horror;
@@ -68,6 +72,17 @@ namespace OP6_.MVVM.Model
                 OnPropertyChanged();
             }
         }
+        private bool _action;
+        public bool Action
+        {
+            get => _action;
+            set
+            {
+                _action = value;
+                GenreParameters["Боевик"] = Action;
+                OnPropertyChanged();
+            }
+        }
         private int _startDate = 0;
         public int StartDate
         {
@@ -88,6 +103,31 @@ namespace OP6_.MVVM.Model
                 OnPropertyChanged();
             }
         }
+
+
+        private bool _isDescending;
+        public bool IsDescending
+        {
+            get => _isDescending;
+            set
+            {
+                _isDescending = value;
+                OnPropertyChanged();
+            }
+        }
+        private bool _isIncreasing;
+        public bool IsIncreasing
+        {
+            get => _isIncreasing;
+            set
+            {
+                _isIncreasing = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
 
 
 

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace OP6_.MVVM.ViewModel
 {
@@ -61,8 +63,10 @@ namespace OP6_.MVVM.ViewModel
 
         public RelayCommand FilterCommand {  get; set; }
         public RelayCommand ResetFiltersCommand { get; set; }
+
+        public RelayCommand DeleteMoveCommand { get; set; }
         public FilmotekaViewModel(INavigationService navigation, FilmFilterParameters filterParameters,
-            FilteringService filteringService)
+            FilteringService filteringService, FilmLocalDB filmDB)
         {
             Navigation = navigation;
             FilteringService = filteringService;
@@ -72,11 +76,23 @@ namespace OP6_.MVVM.ViewModel
 
             FilterCommand = new RelayCommand(o => { FilmsToShow = FilteringService.Filter(); }, o => true);
             ResetFiltersCommand = new RelayCommand(o => { FilmsToShow = FilteringService.ResetFilters(); }, o => true);
+
+            DeleteMoveCommand = new RelayCommand(o =>
+            {
+                RoutedEventArgs args = o as RoutedEventArgs;
+                var clickedItem = args.OriginalSource as TextBlock;
+                if (clickedItem != null)
+                {
+                    Film film = clickedItem.DataContext as Film;
+                    filmDB.RemoveFilm(film);
+                    UpdateListToShow();
+                }
+            }, o => true);
         }
 
-        private void UpdateFilmsList()
+        private void UpdateListToShow()
         {
-
+            FilmsToShow = FilteringService.ResetFilters();
         }
     }
 }

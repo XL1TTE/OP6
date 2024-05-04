@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Components\FilmsViewComponents\DirectorsListComponent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\FilmsViewComponents\FilmAddPanelComponent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\FilmsViewComponents\FilmListComponent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -16,11 +22,20 @@
     <Compile Update="Components\FilmsViewComponents\FilterPanelComponent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\View\DirectorsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\View\FilmotekaView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Components\FilmsViewComponents\DirectorsListComponent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\FilmsViewComponents\FilmAddPanelComponent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\FilmsViewComponents\FilmListComponent.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -28,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\FilmsViewComponents\FilterPanelComponent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\DirectorsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\FilmotekaView.xaml">
@@ -42,10 +60,16 @@
     <Page Update="Styles\CheckBoxStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\ComboxBoxStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\ExpenderStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\RatingControlStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\TextBoxStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Generic.xaml">
